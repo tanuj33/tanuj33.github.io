@@ -1,1 +1,94 @@
-This is going to be my portfolio webpage 
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tanuj Sharma — Developer Portfolio</title>
+  <meta name="description" content="Tanuj Sharma — app developer portfolio showcasing mobile & web apps." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <div class="title">
+        <h1>Tanuj Sharma</h1>
+        <p class="subtitle">App Developer — mobile & web • clean UI • pragmatic code</p>
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="https://github.com/tanuj33" target="_blank" rel="noopener">GitHub</a>
+        <span class="sep">|</span>
+        <a href="support.html">Support</a>
+        <span class="sep">|</span>
+        <a href="privacy.html">Privacy</a>
+        <span class="sep">|</span>
+        <a href="#projects">Projects</a>
+        <button id="theme-toggle" aria-label="Toggle theme">Toggle</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="hero" class="hero">
+      <h2>Hello — I build delightful apps</h2>
+      <p class="lead">I design and develop mobile-first applications using modern tooling. Below are a few featured projects with demos and source code. (App links will be added after publish.)</p>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2>Featured Applications</h2>
+
+      <!-- App 1 -->
+      <article class="app-card">
+        <img src="placeholder-app-1.png" alt="Screenshot of App One" class="app-screenshot" />
+        <div class="app-details">
+          <h3 id="app1-title">App Title One</h3>
+          <p class="description">Short description of the app. Replace with real description once published.</p>
+          <div class="tags" aria-hidden="true">
+            <span>#ReactNative</span>
+            <span>#Firebase</span>
+            <span>#Mobile</span>
+          </div>
+          <p class="links" id="app1-links">
+            <!-- Replace with real links after publish -->
+            <a class="disabled" aria-disabled="true">Live Demo (coming)</a> |
+            <a class="disabled" aria-disabled="true">GitHub Repo (coming)</a>
+          </p>
+        </div>
+      </article>
+
+      <!-- App 2 -->
+      <article class="app-card">
+        <img src="placeholder-app-2.png" alt="Screenshot of App Two" class="app-screenshot" />
+        <div class="app-details">
+          <h3 id="app2-title">App Title Two</h3>
+          <p class="description">Short description of app two. Replace after publishing.</p>
+          <div class="tags" aria-hidden="true">
+            <span>#Flutter</span>
+            <span>#Dart</span>
+            <span>#Ecommerce</span>
+          </div>
+          <p class="links" id="app2-links">
+            <a class="disabled">Live Demo (coming)</a> |
+            <a class="disabled">GitHub Repo (coming)</a>
+          </p>
+        </div>
+      </article>
+
+    </section>
+
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>I'm an app developer focused on shipping product quality — from prototype to store publish. I enjoy clean architecture, good UX, and practical automation for builds and CI.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Tanuj Sharma. Built with HTML, CSS & a bit of JavaScript. Hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
