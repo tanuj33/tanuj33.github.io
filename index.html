@@ -1,94 +1,285 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Tanuj Sharma — Developer Portfolio</title>
-  <meta name="description" content="Tanuj Sharma — app developer portfolio showcasing mobile & web apps." />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" />
+  <meta charset="UTF-8">
+  <title>Tanuj Sharma – Apps & Tools</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Indie apps and tools by Tanuj Sharma, including SpeakSend – voice-to-text transcription and email.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .logo-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #38bdf8, #1d4ed8);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #e5f2ff;
+      font-weight: 700;
+      margin-right: 0.5rem;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.6);
+    }
+    .hero-bg {
+      background: radial-gradient(circle at top, #eff6ff 0, #f9fafb 45%, #ffffff 100%);
+    }
+
+    /* Scroll + hover animations */
+    .fade-section {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card-animate {
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .card-animate:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.16);
+    }
+
+    .navbar {
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .navbar.scrolled {
+      background-color: #020617 !important;
+      box-shadow: 0 4px 15px rgba(15, 23, 42, 0.3);
+    }
+
+    /* Inline Indian flag with Ashoka Chakra */
+    .flag-india {
+      width: 24px;
+      height: 16px;
+      display: inline-block;
+    }
+    .flag-india svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 2px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.18);
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="container header-inner">
-      <div class="title">
-        <h1>Tanuj Sharma</h1>
-        <p class="subtitle">App Developer — mobile & web • clean UI • pragmatic code</p>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <span class="logo-circle">T</span>
+      <span class="fw-semibold">Tanuj Sharma</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#apps">Apps</a></li>
+        <li class="nav-item"><a class="nav-link" href="mailto:support@tanuj33.in">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-bg py-5 fade-section" style="padding-top:6rem !important;">
+  <div class="container">
+    <div class="row align-items-center gy-4">
+      <div class="col-lg-7">
+        <p class="text-primary small mb-2">Indie app builder · Productivity & AI tools</p>
+        <h1 class="display-5 fw-bold mb-3">
+          Simple apps that turn your voice and ideas into action.
+        </h1>
+        <p class="lead text-muted mb-4">
+          This is the official home for apps published under tanuj33.in, including SpeakSend
+          and future tools built around AI, productivity, and communication.
+        </p>
+        <div class="d-flex flex-wrap gap-2">
+          <a href="/speaksend/" class="btn btn-primary btn-lg">View SpeakSend</a>
+          <a href="#apps" class="btn btn-outline-secondary btn-lg">Browse all apps</a>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="border rounded-4 p-4 bg-white shadow-sm text-center card-animate">
+          <h6 class="text-uppercase text-muted small mb-2">Snapshot</h6>
+          <h3 class="fw-semibold mb-2">Voice → Text → Email</h3>
+          <p class="text-muted mb-0">
+            Capture a quick voice note, get a clean transcript in your inbox in seconds.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPS -->
+<section id="apps" class="py-5 fade-section">
+  <div class="container">
+    <h2 class="fw-semibold mb-3">Apps</h2>
+    <p class="text-muted small mb-4">
+      Each app has its own dedicated privacy policy and support page.
+    </p>
+
+    <div class="row g-4">
+      <!-- SpeakSend card -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm card-animate">
+          <div class="card-body">
+            <h5 class="card-title d-flex align-items-center justify-content-between">
+              <span>SpeakSend</span>
+              <span class="badge bg-primary">iOS · Live</span>
+            </h5>
+            <p class="card-text">
+              Record a voice note, get clean text, and send it to your inbox in seconds.
+              Built for people who think faster than they can type.
+            </p>
+            <p class="text-muted small mb-3">
+              Category: Productivity · Platform: iOS
+            </p>
+            <div class="d-flex flex-wrap gap-2 small">
+              <!-- Replace # with real App Store link when live -->
+              <a href="#" class="link-primary">App Store listing</a>
+              <a href="/speaksend/" class="link-primary">App website</a>
+              <a href="/speaksend/privacy.html" class="link-primary">Privacy policy</a>
+              <a href="/speaksend/support.html" class="link-primary">Support</a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="https://github.com/tanuj33" target="_blank" rel="noopener">GitHub</a>
-        <span class="sep">|</span>
-        <a href="support.html">Support</a>
-        <span class="sep">|</span>
-        <a href="privacy.html">Privacy</a>
-        <span class="sep">|</span>
-        <a href="#projects">Projects</a>
-        <button id="theme-toggle" aria-label="Toggle theme">Toggle</button>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <section id="hero" class="hero">
-      <h2>Hello — I build delightful apps</h2>
-      <p class="lead">I design and develop mobile-first applications using modern tooling. Below are a few featured projects with demos and source code. (App links will be added after publish.)</p>
-    </section>
-
-    <section id="projects" class="projects">
-      <h2>Featured Applications</h2>
-
-      <!-- App 1 -->
-      <article class="app-card">
-        <img src="placeholder-app-1.png" alt="Screenshot of App One" class="app-screenshot" />
-        <div class="app-details">
-          <h3 id="app1-title">App Title One</h3>
-          <p class="description">Short description of the app. Replace with real description once published.</p>
-          <div class="tags" aria-hidden="true">
-            <span>#ReactNative</span>
-            <span>#Firebase</span>
-            <span>#Mobile</span>
+      <!-- Future app placeholder -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm card-animate" style="border-style:dashed;">
+          <div class="card-body">
+            <h5 class="card-title d-flex align-items-center justify-content-between">
+              <span>Future App</span>
+              <span class="badge bg-secondary">Coming soon</span>
+            </h5>
+            <p class="card-text">
+              This space is reserved for upcoming apps under the tanuj33.in developer account.
+              Each new app will have its own landing page, privacy policy, and support details.
+            </p>
+            <p class="text-muted small mb-0">
+              More information will appear here before launch.
+            </p>
           </div>
-          <p class="links" id="app1-links">
-            <!-- Replace with real links after publish -->
-            <a class="disabled" aria-disabled="true">Live Demo (coming)</a> |
-            <a class="disabled" aria-disabled="true">GitHub Repo (coming)</a>
-          </p>
         </div>
-      </article>
+      </div>
 
-      <!-- App 2 -->
-      <article class="app-card">
-        <img src="placeholder-app-2.png" alt="Screenshot of App Two" class="app-screenshot" />
-        <div class="app-details">
-          <h3 id="app2-title">App Title Two</h3>
-          <p class="description">Short description of app two. Replace after publishing.</p>
-          <div class="tags" aria-hidden="true">
-            <span>#Flutter</span>
-            <span>#Dart</span>
-            <span>#Ecommerce</span>
-          </div>
-          <p class="links" id="app2-links">
-            <a class="disabled">Live Demo (coming)</a> |
-            <a class="disabled">GitHub Repo (coming)</a>
-          </p>
-        </div>
-      </article>
-
-    </section>
-
-    <section id="about" class="about">
-      <h2>About</h2>
-      <p>I'm an app developer focused on shipping product quality — from prototype to store publish. I enjoy clean architecture, good UX, and practical automation for builds and CI.</p>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Tanuj Sharma. Built with HTML, CSS & a bit of JavaScript. Hosted on GitHub Pages.</p>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<!-- PUBLISHER INFO -->
+<section class="py-4 fade-section">
+  <div class="container">
+    <h2 class="fw-semibold mb-3">Publisher</h2>
+    <div class="card shadow-sm card-animate">
+      <div class="card-body">
+        <p class="mb-1"><strong>Developer:</strong> Tanuj Sharma</p>
+        <p class="mb-1">
+          <strong>Website:</strong>
+          <a href="https://tanuj33.in">https://tanuj33.in</a>
+        </p>
+        <p class="mb-1">
+          <strong>Support email:</strong>
+          <a href="mailto:support@tanuj33.in">support@tanuj33.in</a>
+        </p>
+        <p class="text-muted small mb-0 mt-2">
+          This site exists to provide clear, public information for users and app review teams,
+          including privacy policies and support details for each app.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-top py-4 bg-light mt-3">
+  <div class="container text-center fade-section">
+    <div class="small text-muted mb-1">
+      © <span id="year"></span> tanuj33.in · All rights reserved.
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center gap-2 small text-muted">
+      <span class="flag-india" aria-hidden="true">
+        <svg viewBox="0 0 24 16">
+          <!-- White background -->
+          <rect width="24" height="16" fill="#ffffff"/>
+          <!-- Saffron top -->
+          <rect width="24" height="5.33" y="0" fill="#FF9933"/>
+          <!-- Green bottom -->
+          <rect width="24" height="5.33" y="10.67" fill="#138808"/>
+          <!-- Ashoka Chakra -->
+          <circle cx="12" cy="8" r="3.2" stroke="#054187" stroke-width="0.6" fill="none"/>
+          <circle cx="12" cy="8" r="0.5" fill="#054187"/>
+          <!-- Spokes (approx 12 for simplicity) -->
+          <g stroke="#054187" stroke-width="0.3">
+            <line x1="12" y1="4.8" x2="12" y2="6.1"/>
+            <line x1="12" y1="9.9" x2="12" y2="11.2"/>
+            <line x1="8.8" y1="8" x2="10.1" y2="8"/>
+            <line x1="13.9" y1="8" x2="15.2" y2="8"/>
+            <line x1="9.3" y1="5.4" x2="10.2" y2="6.2"/>
+            <line x1="14.7" y1="10.0" x2="13.8" y2="9.2"/>
+            <line x1="9.3" y1="10.6" x2="10.2" y2="9.8"/>
+            <line x1="14.7" y1="5.4" x2="13.8" y2="6.2"/>
+          </g>
+        </svg>
+      </span>
+      <span>Made in India</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Smooth scroll for hash links
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId.length > 1) {
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+
+  // Scroll reveal animations
+  const sections = document.querySelectorAll('.fade-section');
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+  sections.forEach((sec) => observer.observe(sec));
+
+  // Navbar shadow on scroll
+  const nav = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+</script>
+
 </body>
 </html>
