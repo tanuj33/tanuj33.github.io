@@ -1,285 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Tanuj Sharma – Apps & Tools</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Indie apps and tools by Tanuj Sharma, including SpeakSend – voice-to-text transcription and email.">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tarun Chaturvedi | iOS & Flutter Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
   <style>
-    .logo-circle {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #38bdf8, #1d4ed8);
-      display: inline-flex;
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --bg-light: #f9fafb;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 100px 20px;
+      text-align: center;
+      background: radial-gradient(circle at top right, #1e40af, #0f172a);
+      color: white;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 20px auto;
+      color: #bfdbfe;
+    }
+
+    nav { margin-top: 30px; }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #60a5fa; }
+
+    main {
+      max-width: 1000px;
+      margin: -40px auto 100px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 24px;
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      display: flex;
       align-items: center;
-      justify-content: center;
-      color: #e5f2ff;
-      font-weight: 700;
-      margin-right: 0.5rem;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.6);
-    }
-    .hero-bg {
-      background: radial-gradient(circle at top, #eff6ff 0, #f9fafb 45%, #ffffff 100%);
+      gap: 10px;
     }
 
-    /* Scroll + hover animations */
-    .fade-section {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .fade-section.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
     }
 
-    .card-animate {
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-    .card-animate:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.16);
-    }
-
-    .navbar {
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    .navbar.scrolled {
-      background-color: #020617 !important;
-      box-shadow: 0 4px 15px rgba(15, 23, 42, 0.3);
-    }
-
-    /* Inline Indian flag with Ashoka Chakra */
-    .flag-india {
-      width: 24px;
-      height: 16px;
+    .skill-tag {
       display: inline-block;
+      background: #eef2ff;
+      color: #4338ca;
+      padding: 6px 14px;
+      border-radius: 99px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 4px;
     }
-    .flag-india svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-      border-radius: 2px;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.18);
+
+    .project-card {
+      border: 1px solid #e5e7eb;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 12px;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 20px;
+    }
+
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.5rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="#">
-      <span class="logo-circle">T</span>
-      <span class="fw-semibold">Tanuj Sharma</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="#apps">Apps</a></li>
-        <li class="nav-item"><a class="nav-link" href="mailto:support@tanuj33.in">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<header>
+  <h1>Tarun Chaturvedi</h1>
+  <p>Crafting high-performance mobile experiences and developer tools with Swift, Flutter, and a focus on automation.</p>
+  <nav>
+    <a href="#about">Experience</a>
+    <a href="#projects">Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-<!-- HERO -->
-<section class="hero-bg py-5 fade-section" style="padding-top:6rem !important;">
-  <div class="container">
-    <div class="row align-items-center gy-4">
-      <div class="col-lg-7">
-        <p class="text-primary small mb-2">Indie app builder · Productivity & AI tools</p>
-        <h1 class="display-5 fw-bold mb-3">
-          Simple apps that turn your voice and ideas into action.
-        </h1>
-        <p class="lead text-muted mb-4">
-          This is the official home for apps published under tanuj33.in, including SpeakSend
-          and future tools built around AI, productivity, and communication.
-        </p>
-        <div class="d-flex flex-wrap gap-2">
-          <a href="/speaksend/" class="btn btn-primary btn-lg">View SpeakSend</a>
-          <a href="#apps" class="btn btn-outline-secondary btn-lg">Browse all apps</a>
-        </div>
-      </div>
-      <div class="col-lg-5">
-        <div class="border rounded-4 p-4 bg-white shadow-sm text-center card-animate">
-          <h6 class="text-uppercase text-muted small mb-2">Snapshot</h6>
-          <h3 class="fw-semibold mb-2">Voice → Text → Email</h3>
-          <p class="text-muted mb-0">
-            Capture a quick voice note, get a clean transcript in your inbox in seconds.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- APPS -->
-<section id="apps" class="py-5 fade-section">
-  <div class="container">
-    <h2 class="fw-semibold mb-3">Apps</h2>
-    <p class="text-muted small mb-4">
-      Each app has its own dedicated privacy policy and support page.
+<main>
+  <section id="about" class="card">
+    <h2 class="section-title">Professional Overview</h2>
+    <p>
+      I am a mobile engineer dedicated to bridging the gap between complex code and intuitive user interfaces. 
+      With expertise in <b>iOS (Swift/SwiftUI)</b> and <b>Cross-Platform (Flutter)</b>, I don't just build apps—I build 
+      systems that make development faster and lives easier.
     </p>
-
-    <div class="row g-4">
-      <!-- SpeakSend card -->
-      <div class="col-md-6">
-        <div class="card h-100 shadow-sm card-animate">
-          <div class="card-body">
-            <h5 class="card-title d-flex align-items-center justify-content-between">
-              <span>SpeakSend</span>
-              <span class="badge bg-primary">iOS · Live</span>
-            </h5>
-            <p class="card-text">
-              Record a voice note, get clean text, and send it to your inbox in seconds.
-              Built for people who think faster than they can type.
-            </p>
-            <p class="text-muted small mb-3">
-              Category: Productivity · Platform: iOS
-            </p>
-            <div class="d-flex flex-wrap gap-2 small">
-              <!-- Replace # with real App Store link when live -->
-              <a href="#" class="link-primary">App Store listing</a>
-              <a href="/speaksend/" class="link-primary">App website</a>
-              <a href="/speaksend/privacy.html" class="link-primary">Privacy policy</a>
-              <a href="/speaksend/support.html" class="link-primary">Support</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Future app placeholder -->
-      <div class="col-md-6">
-        <div class="card h-100 shadow-sm card-animate" style="border-style:dashed;">
-          <div class="card-body">
-            <h5 class="card-title d-flex align-items-center justify-content-between">
-              <span>Future App</span>
-              <span class="badge bg-secondary">Coming soon</span>
-            </h5>
-            <p class="card-text">
-              This space is reserved for upcoming apps under the tanuj33.in developer account.
-              Each new app will have its own landing page, privacy policy, and support details.
-            </p>
-            <p class="text-muted small mb-0">
-              More information will appear here before launch.
-            </p>
-          </div>
-        </div>
-      </div>
-
+    <div style="margin-top: 20px;">
+      <span class="skill-tag">SwiftUI</span>
+      <span class="skill-tag">Combine</span>
+      <span class="skill-tag">Flutter/Dart</span>
+      <span class="skill-tag">Core Data</span>
+      <span class="skill-tag">CI/CD Automation</span>
+      <span class="skill-tag">REST APIs</span>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PUBLISHER INFO -->
-<section class="py-4 fade-section">
-  <div class="container">
-    <h2 class="fw-semibold mb-3">Publisher</h2>
-    <div class="card shadow-sm card-animate">
-      <div class="card-body">
-        <p class="mb-1"><strong>Developer:</strong> Tanuj Sharma</p>
-        <p class="mb-1">
-          <strong>Website:</strong>
-          <a href="https://tanuj33.in">https://tanuj33.in</a>
+  <section id="projects">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="grid">
+      <div class="card project-card">
+        <h3>🚀 Translix</h3>
+        <p style="color: var(--text-muted);">
+          <b>The Problem:</b> Manual localization in Xcode is tedious and error-prone. <br>
+          <b>The Solution:</b> A macOS productivity tool that transforms CSV data into production-ready <code>.strings</code> files instantly, handling directory structures and multi-language keys automatically.
         </p>
-        <p class="mb-1">
-          <strong>Support email:</strong>
-          <a href="mailto:support@tanuj33.in">support@tanuj33.in</a>
-        </p>
-        <p class="text-muted small mb-0 mt-2">
-          This site exists to provide clear, public information for users and app review teams,
-          including privacy policies and support details for each app.
+        <a class="btn" href="Translix/index.html">View Case Study →</a>
+      </div>
+
+      <div class="card project-card">
+        <h3>✨ Next Big Thing</h3>
+        <p style="color: var(--text-muted);">
+          Currently exploring <b>Swift Data</b> and <b>AI Integration</b> in mobile environments. Check back soon for my latest experiment.
         </p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer class="border-top py-4 bg-light mt-3">
-  <div class="container text-center fade-section">
-    <div class="small text-muted mb-1">
-      © <span id="year"></span> tanuj33.in · All rights reserved.
+  <section id="contact" class="card" style="text-align: center;">
+    <h2 class="section-title" style="justify-content: center;">Get In Touch</h2>
+    <p>Looking for a developer or want to collaborate on a tool? Let's talk.</p>
+    <p><b>Email:</b> tarunchaturveditechnical@gmail.com</p>
+    <div style="margin-top: 20px;">
+        <a href="https://github.com/tanuj33" style="color: var(--primary); font-weight: 600;">GitHub</a> • 
+        <a href="https://www.linkedin.com/in/tarun-chaturvedi" style="color: var(--primary); font-weight: 600;">LinkedIn</a>
     </div>
+  </section>
+</main>
 
-    <div class="d-flex justify-content-center align-items-center gap-2 small text-muted">
-      <span class="flag-india" aria-hidden="true">
-        <svg viewBox="0 0 24 16">
-          <!-- White background -->
-          <rect width="24" height="16" fill="#ffffff"/>
-          <!-- Saffron top -->
-          <rect width="24" height="5.33" y="0" fill="#FF9933"/>
-          <!-- Green bottom -->
-          <rect width="24" height="5.33" y="10.67" fill="#138808"/>
-          <!-- Ashoka Chakra -->
-          <circle cx="12" cy="8" r="3.2" stroke="#054187" stroke-width="0.6" fill="none"/>
-          <circle cx="12" cy="8" r="0.5" fill="#054187"/>
-          <!-- Spokes (approx 12 for simplicity) -->
-          <g stroke="#054187" stroke-width="0.3">
-            <line x1="12" y1="4.8" x2="12" y2="6.1"/>
-            <line x1="12" y1="9.9" x2="12" y2="11.2"/>
-            <line x1="8.8" y1="8" x2="10.1" y2="8"/>
-            <line x1="13.9" y1="8" x2="15.2" y2="8"/>
-            <line x1="9.3" y1="5.4" x2="10.2" y2="6.2"/>
-            <line x1="14.7" y1="10.0" x2="13.8" y2="9.2"/>
-            <line x1="9.3" y1="10.6" x2="10.2" y2="9.8"/>
-            <line x1="14.7" y1="5.4" x2="13.8" y2="6.2"/>
-          </g>
-        </svg>
-      </span>
-      <span>Made in India</span>
-    </div>
-  </div>
+<footer>
+  <p>© 2026 Tarun Chaturvedi. Engineered for performance.</p>
 </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Smooth scroll for hash links
-  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId.length > 1) {
-        const target = document.querySelector(targetId);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
-    });
-  });
-
-  // Scroll reveal animations
-  const sections = document.querySelectorAll('.fade-section');
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-  sections.forEach((sec) => observer.observe(sec));
-
-  // Navbar shadow on scroll
-  const nav = document.querySelector('.navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  });
-</script>
 
 </body>
 </html>
