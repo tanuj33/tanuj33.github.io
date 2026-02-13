@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Translix — Scale your App Globally</title>
+  <style>
+    /* Reuse similar styles for brand consistency */
+    body { font-family: 'Inter', sans-serif; margin: 0; color: #333; line-height: 1.6; }
+    .hero { padding: 80px 20px; background: #2563eb; color: white; text-align: center; }
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 40px 0; }
+    .btn { background: #2563eb; color: white; padding: 15px 30px; border-radius: 10px; text-decoration: none; font-weight: bold; }
+    code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; color: #e11d48; }
+    .screenshot { width: 100%; border-radius: 12px; border: 1px solid #ddd; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Translix</h1>
+  <p>Stop copy-pasting translations. Start automating them.</p>
+  <br>
+  <a class="btn" style="background: white; color: #2563eb;" href="https://apps.apple.com/app/id6759179905">Download for macOS</a>
+</div>
+
+<div class="container">
+  <h2>Why Translix?</h2>
+  <p>Localizing an iOS app into 10+ languages usually means hours of manual entry. Translix reduces that to <b>seconds</b>. By acting as a bridge between your spreadsheets and Xcode, it ensures your translation keys are always in sync.</p>
+
+  <div class="feature-grid">
+    <div>
+      <h3>📁 Auto-Directory Mapping</h3>
+      <p>Automatically generates <code>en.lproj</code>, <code>fr.lproj</code>, etc., so you don't have to create them manually in Finder.</p>
+    </div>
+    <div>
+      <h3>Validation</h3>
+      <p>Checks for missing keys or empty values in your CSV before exporting to prevent app crashes or UI bugs.</p>
+    </div>
+  </div>
+
+  <h2>Walkthrough</h2>
+  <img src="images/demo1.png" class="screenshot" alt="Translix Interface">
+  
+  <ol>
+    <li><b>Export:</b> Save your Google Sheet or Excel as a <code>.csv</code>.</li>
+    <li><b>Import:</b> Drag and drop the file into Translix.</li>
+    <li><b>Magic:</b> The tool parses the columns and maps them to the correct language ISO codes.</li>
+    <li><b>Finalize:</b> Direct export into your Xcode project folder.</li>
+  </ol>
+
+  <section style="margin-top: 40px;">
+  <h2 style="font-size: 1.5rem; margin-bottom: 15px;">Correct CSV Formatting</h2>
+  <p>To ensure Translix parses your data correctly, organize your CSV file as follows. The first column <b>must</b> be the translation keys.</p>
+
+  <div style="overflow-x: auto; border: 1px solid #e5e7eb; border-radius: 12px;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
+      <thead>
+        <tr style="background: #f8fafc; border-bottom: 2px solid #e5e7eb;">
+          <th style="padding: 15px; color: #1e293b;">Key (Column A)</th>
+          <th style="padding: 15px; color: #1e293b;">en (Column B)</th>
+          <th style="padding: 15px; color: #1e293b;">hi (Column C)</th>
+          <th style="padding: 15px; color: #1e293b;">fr (Column D)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #f1f5f9;">
+          <td style="padding: 12px 15px;"><code>app_name</code></td>
+          <td style="padding: 12px 15px;">My App</td>
+          <td style="padding: 12px 15px;">मेरा ऐप</td>
+          <td style="padding: 12px 15px;">Mon Appli</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f1f5f9; background: #fdfdff;">
+          <td style="padding: 12px 15px;"><code>btn_save</code></td>
+          <td style="padding: 12px 15px;">Save</td>
+          <td style="padding: 12px 15px;">सहेजें</td>
+          <td style="padding: 12px 15px;">Sauvegarder</td>
+        </tr>
+        <tr>
+          <td style="padding: 12px 15px;"><code>msg_success</code></td>
+          <td style="padding: 12px 15px;">Success!</td>
+          <td style="padding: 12px 15px;">सफलता!</td>
+          <td style="padding: 12px 15px;">Succès!</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="margin-top: 15px; font-size: 0.85rem; color: #64748b;">
+    💡 <b>Tip:</b> Use the language ISO code (en, hi, fr, es) as the header for each column so Translix knows which <code>.lproj</code> folder to create.
+  </p>
+</section>
+</div>
+
+<footer style="margin-top: 80px; padding: 40px 20px; border-top: 1px solid #e5e7eb; text-align: center; background: #f9fafb;">
+  <div style="max-width: 900px; margin: 0 auto;">
+    <p style="font-weight: 600; color: #111;">Translix by Tarun Chaturvedi</p>
+    <div style="margin: 15px 0;">
+      <a href="privacy.html" style="margin: 0 15px; color: #6366f1; text-decoration: none;">Privacy Policy</a>
+      <a href="support.html" style="margin: 0 15px; color: #6366f1; text-decoration: none;">Customer Support</a>
+      <a href="../index.html" style="margin: 0 15px; color: #6366f1; text-decoration: none;">Main Portfolio</a>
+    </div>
+    <p style="font-size: 0.85rem; color: #6b7280;">&copy; 2026 Translix Tool. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
